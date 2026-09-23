@@ -17,13 +17,30 @@ One script per exercise from Part IV of the lab sheet (`../25S_Lab2_CST8233.pdf`
    ```
 2. In VS Code, install the **R** extension (by REditorSupport) in the **WSL** window,
    not just locally. The Extensions panel should show it under "WSL: Ubuntu – Installed".
-3. Install the helper packages the extension uses. Open a terminal and run `R`, then:
-   ```r
-   install.packages(c("languageserver", "httpgd"))
+3. *(Optional)* Install the helper packages the extension uses. They are not needed to run
+   the labs. They are compiled from source, so they need these system libraries first:
+   ```bash
+   sudo apt install build-essential libuv1-dev libxml2-dev libfontconfig1-dev \
+       libfreetype-dev libpng-dev libcairo2-dev libtiff-dev
    ```
-   If it asks to use a personal library, answer `yes`. Type `q()` to exit.
+   Then run `R` in a terminal and install them:
+   ```r
+   install.packages("languageserver")
+   install.packages("httpgd", repos = c("https://nx10.r-universe.dev", "https://cloud.r-project.org"))
+   ```
+   If it asks to use a personal library, answer `yes`. Type `q()` to exit, then reload VS Code
+   (**Ctrl+Shift+P** → **Developer: Reload Window**).
    - `languageserver` provides autocomplete and hover help.
    - `httpgd` shows plots in a VS Code tab. Without it, plots open in a separate window.
+
+## Opening the R console
+
+The R extension's console is a terminal called **R Interactive**. Open it in any of these ways:
+- **Ctrl+Shift+P** → type **R: Create R terminal** → Enter.
+- In the Terminal panel (**Ctrl+`**), click the **˅** arrow next to **+** and choose **R Terminal**.
+- Just run a script (below). The console opens automatically.
+
+You'll see the `>` prompt, where you can type R commands directly.
 
 ## Running the exercises in VS Code
 
