@@ -4,10 +4,10 @@ One script per exercise from Part IV of the lab sheet (`../25S_Lab2_CST8233.pdf`
 
 | Script | What it does | Expected output |
 |---|---|---|
-| `Exercise1.R` | Evaluates f(x) = 0.1·eˣ·cos(x) + 2·ln\|x\| at x = 3, 3.1, …, 6, sums it, plots it | `"The sum of this vector is: 256.6346"` + plot titled **My First Plot** |
+| `Exercise1.R` | Evaluates f(x) = 0.1·eˣ·cos(x) + 2·ln\|x\| at x = 3, 3.1, …, 6, sums it, plots it | Table of x / f(x), then `"The sum of this vector is: 256.6346"` + plot titled **My First Plot** |
 | `Exercise2.R` | Sum of 2ⁱ/i + 3ⁱ/i² for i = 1..25 | `"The sum of this summation is: 2129170437"` |
-| `Exercise3.R` | Random vectors `Vec1`, `Vec2` (seed 75), builds `Vec2a`, `Vec2b`, `Vec1c`, counts evens in `Vec1` | Lists for a–c, then `d. Numbers in Vec1 divisible by 2: 43` |
-| `Exercise4.R` | Defines piecewise `myFun(Vec1)` and plots it for −4 ≤ x < 4 | Plot only (no console output) |
+| `Exercise3.R` | Random vectors `Vec1`, `Vec2` (seed 75), builds `Vec2a`, `Vec2b`, `Vec1c`, counts evens in `Vec1` | One table with columns for b (index), a (Vec2 value), c (Vec1 value); then `Part d: numbers in Vec1 divisible by 2: 43` |
+| `Exercise4.R` | Defines piecewise `myFun(Vec1)` and plots it for −4 ≤ x < 4 | Table of sample x / f(x) values (incl. boundaries 0 and 2) + plot |
 
 ## One-time setup (VS Code + WSL)
 
@@ -53,6 +53,21 @@ You'll see the `>` prompt, where you can type R commands directly.
    This is handy for stepping through during the demo.
 4. Variables persist in the R terminal between runs. `ls()` lists them and `print(Vec2a)`
    shows one. `rm(list = ls())` clears everything.
+
+Each script prints a `===== Exercise N =====` header, so when you run several in a row
+you can tell where each one starts. Type `cat("\014")` or press **Ctrl+L** in the R terminal to
+clear it between runs.
+
+### Viewing results as a spreadsheet-style table
+
+After running a script, `View()` opens a variable in a sortable table tab in VS Code
+instead of printing it in the terminal:
+```r
+View(Vec2)                                   # any vector
+View(data.frame(Vec2b, Vec2a, Vec1c))        # Exercise 3, parts a-c side by side
+```
+The **R** icon in the left sidebar also has a **Workspace** view that lists every variable
+and its value. Click one to open it in the viewer.
 
 You can also call the function from Exercise 4 after sourcing it:
 ```r
