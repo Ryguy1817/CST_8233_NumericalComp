@@ -14,4 +14,5 @@ cat("\n")
 cVecSum <- sum(cVec)
 print(paste("The sum of this vector is:", round(cVecSum, 4)))
 
-plot(x, cVec, main = "My First Plot", xlab = "x", ylab = "f(x)")
+# type = "o" draws the points with a solid line connecting them
+plot(x, cVec, type = "o", pch = 19, main = "My First Plot", xlab = "x", ylab = "f(x)")

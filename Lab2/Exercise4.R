@@ -33,4 +33,10 @@ x <- x[x < 4]
 y <- myFun(x)
 
 plot(x, y, type = "l", main = "Piecewise Function f(x)", xlab = "x", ylab = "f(x)")
+
+# Mark points along the curve every 0.5 units, highlighting the boundaries x = 0 and x = 2
+markX <- seq(-4, 3.5, by = 0.5)
+points(markX, myFun(markX), pch = 19)
+points(c(0, 2), myFun(c(0, 2)), pch = 19, col = "red", cex = 1.4)
+text(c(0, 2), myFun(c(0, 2)), labels = c("(0, 3)", "(2, 5)"), pos = 2, col = "red")
 cat("\nPlot drawn for -4 <= x < 4\n")

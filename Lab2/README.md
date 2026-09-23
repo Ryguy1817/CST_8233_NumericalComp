@@ -4,10 +4,10 @@ One script per exercise from Part IV of the lab sheet (`../25S_Lab2_CST8233.pdf`
 
 | Script | What it does | Expected output |
 |---|---|---|
-| `Exercise1.R` | Evaluates f(x) = 0.1·eˣ·cos(x) + 2·ln\|x\| at x = 3, 3.1, …, 6, sums it, plots it | Table of x / f(x), then `"The sum of this vector is: 256.6346"` + plot titled **My First Plot** |
+| `Exercise1.R` | Evaluates f(x) = 0.1·eˣ·cos(x) + 2·ln\|x\| at x = 3, 3.1, …, 6, sums it, plots it | Table of x / f(x), then `"The sum of this vector is: 256.6346"` + plot titled **My First Plot** (points joined by a line) |
 | `Exercise2.R` | Sum of 2ⁱ/i + 3ⁱ/i² for i = 1..25 | `"The sum of this summation is: 2129170437"` |
 | `Exercise3.R` | Random vectors `Vec1`, `Vec2` (seed 75), builds `Vec2a`, `Vec2b`, `Vec1c`, counts evens in `Vec1` | One table with columns for b (index), a (Vec2 value), c (Vec1 value); then `Part d: numbers in Vec1 divisible by 2: 43` |
-| `Exercise4.R` | Defines piecewise `myFun(Vec1)` and plots it for −4 ≤ x < 4 | Table of sample x / f(x) values (incl. boundaries 0 and 2) + plot |
+| `Exercise4.R` | Defines piecewise `myFun(Vec1)` and plots it for −4 ≤ x < 4 | Table of sample x / f(x) values (incl. boundaries 0 and 2) + curve with points marked every 0.5 and the boundaries (0, 3), (2, 5) in red |
 
 ## One-time setup (VS Code + WSL)
 
