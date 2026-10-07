@@ -61,8 +61,10 @@ xs <- seq(-2, 3, by = 0.5)
 points(xs, p(xs),    pch = 19, col = "blue")
 points(xs, dpdx(xs), pch = 19, col = "red")
 
-# Horizontal line, slope 0, intercept 0  (abline(a = intercept, b = slope))
-abline(a = 0, b = 0)
+# Horizontal line, slope 0, intercept 0  (abline(a = intercept, b = slope)).
+# lwd/col make it easy to see (the default is a thin black hairline that can
+# disappear in a PDF viewer).
+abline(a = 0, b = 0, lwd = 2, col = "darkgreen")
 
-legend("topright", legend = c("p(x)", "dpdx"), col = c("blue", "red"),
-       lwd = 2, pch = 19, bty = "n")
+legend("topright", legend = c("p(x)", "dpdx", "y = 0"),
+       col = c("blue", "red", "darkgreen"), lwd = 2, pch = c(19, 19, NA), bty = "n")
